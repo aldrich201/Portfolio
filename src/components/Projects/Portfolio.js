@@ -186,6 +186,6 @@ export const portfolio = [
 		],
 		projectSummary: 'Portfolio designed with ReactJS, Material UI, and React Spring',
 		photo: './images/port.jpg',
-		github: '#'
+		github: 'https://github.com/aldrich201/Portfolio'
 	}
 ];
