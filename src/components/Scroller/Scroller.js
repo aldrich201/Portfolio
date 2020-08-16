@@ -46,14 +46,14 @@ const Scroller = () => {
 
 	const onClickHandler2 = () => {
 		window.scrollTo({
-			top: 0.1738 * window.document.body.scrollHeight,
+			top: 0.2 * window.document.body.scrollHeight,
 			behavior: 'smooth'
 		});
 	};
 
 	const onClickHandler3 = () => {
 		window.scrollTo({
-			top: 0.375 * window.document.body.scrollHeight,
+			top: 0.38 * window.document.body.scrollHeight,
 			behavior: 'smooth'
 		});
 	};

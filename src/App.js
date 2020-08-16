@@ -27,39 +27,40 @@ function App() {
 		return new Promise((resolve) => setTimeout(resolve, milliseconds));
 	};
 
-	
-
 	useEffect(() => {
 		const waitLoad = async (milliseconds = 2000) => {
 			await sleep(milliseconds);
-			setLoading(false)
-		  };
-		waitLoad(2000)
-	},[])
+			setLoading(false);
+		};
+		waitLoad(2000);
+	}, []);
 
+	return (
+		<div className="App">
+			{loading ? (
+				<Loader />
+			) : (
+				<Grid container className={classes.container}>
+					<Grid container item className={classes.intro}>
+						<Intro />
+					</Grid>
 
-	return <div className="App">{loading ? (
-		<Loader />
-	) : (
-		<Grid container className={classes.container}>
-			<Grid container item className={classes.intro}>
-				<Intro />
-			</Grid>
+					<About />
 
-			<About />
+					<Grid container item className={classes.project}>
+						<ProjectTitle />
+						<Projects />
+					</Grid>
 
-			<Grid container item className={classes.project}>
-				<ProjectTitle />
-				<Projects />
-			</Grid>
+					<Contact />
 
-			<Contact />
+					<Footer />
 
-			<Footer />
-
-			<Scroller />
-		</Grid>
-	)}</div>;
+					<Scroller />
+				</Grid>
+			)}
+		</div>
+	);
 }
 
 export default App;

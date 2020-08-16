@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 import InfoIcon from '@material-ui/icons/Info';
 const useStyles = makeStyles({
 	container: {
-		minHeight: '65vh',
+		minHeight: '72.5vh',
 		background: '#FFEC70',
 		color: '#FFFFFF'
 	},
@@ -24,16 +24,13 @@ const useStyles = makeStyles({
 		top: '5px',
 		color: '#FFFFFF'
 	},
-	ph: {
-		color: '#FFEC70',
-		fontWeight: '700'
-	},
 	au: {
 		fontWeight: '700',
-		fontSize: '1.8rem'
+		fontSize: '2rem'
 	},
 	text: {
-		marginTop: '2rem'
+		marginTop: '2rem',
+		lineHeight: '3rem'
 	}
 });
 
