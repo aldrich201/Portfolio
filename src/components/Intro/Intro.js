@@ -34,7 +34,8 @@ const useStyles = makeStyles({
 		marginTop: 'calc(100vh * 0.02)',
 		color: '#2F5075',
 		letterSpacing: '2px',
-		textShadow: '0 5px 5px rgba(0,0,0,0.2)'
+		textShadow: '0 5px 5px rgba(0,0,0,0.2)',
+		fontWeight: '700'
 	},
 	bold: {
 		color: '#FF4754'
