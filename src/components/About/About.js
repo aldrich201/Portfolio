@@ -6,13 +6,13 @@ import { makeStyles } from '@material-ui/styles';
 import InfoIcon from '@material-ui/icons/Info';
 const useStyles = makeStyles({
 	container: {
-		minHeight: '45vh',
+		minHeight: '65vh',
 		background: '#FFEC70',
 		color: '#FFFFFF'
 	},
 	aboutHeader: {
 		width: '110rem',
-		margin: '2rem auto',
+		margin: '3rem auto',
 		height: '0'
 	},
 	about: {
@@ -30,10 +30,10 @@ const useStyles = makeStyles({
 	},
 	au: {
 		fontWeight: '700',
-		fontSize: '1.5rem'
+		fontSize: '1.8rem'
 	},
 	text: {
-		lineHeight: '2rem'
+		marginTop: '2rem'
 	}
 });
 
@@ -45,10 +45,10 @@ const About = () => {
 				<Typography variant="h1">
 					<InfoIcon className={classes.icon} fontSize="inherit" color="primary" />
 				</Typography>
-				<Typography color='primary' variant="h1" className={classes.about}>
+				<Typography color="primary" variant="h1" className={classes.about}>
 					About me
 				</Typography>
-				<Typography color="primary" variant="h5" className={classes.text}>
+				<Typography color="primary" variant="h4" className={classes.text}>
 					Hi! My name is{' '}
 					<Typography className={classes.au} display="inline">
 						Aldrich
@@ -100,7 +100,6 @@ const About = () => {
 				</Typography>
 			</Grid>
 		</Grid>
-
 	);
 };
 
