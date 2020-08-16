@@ -14,7 +14,10 @@ const useStyles = makeStyles((theme) => ({
 		position: 'relative',
 		top: '5px',
 		color: 'white'
-	},
+	},title: {
+		fontWeight: '600',
+		textTransform: 'uppercase'
+	}
 }));
 
 const ContactTitle = () => {
@@ -24,7 +27,7 @@ const ContactTitle = () => {
 				<Typography variant="h1">
 					<SendIcon fontSize="inherit" className={classes.icon} />
 				</Typography>
-				<Typography variant="h1" color="primary">
+				<Typography className={classes.title} variant="h1" color="primary">
 					Contact
 				</Typography>
 			</Grid>

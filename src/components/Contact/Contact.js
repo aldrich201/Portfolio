@@ -15,7 +15,7 @@ import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles((theme) => ({
 	container: {
 		height: '50vh',
-		background: '#85CAFF'
+		background: '#FFEC70'
 	},
 	width: {
 		width: '110rem',
@@ -30,12 +30,17 @@ const useStyles = makeStyles((theme) => ({
 	media: {
 		color: '#FFFFFF',
 		position: 'relative',
-		top: '2px',
-		right: '2px'
+		top: '5px',
+		marginRight: '1rem',
+		transform: 'scale(1.2)'
 	},
 	details: {
 		width: '110rem',
 		margin: '0 auto'
+	},
+	type: {
+		fontWeight: '700',
+		fontSize: '2rem'
 	}
 }));
 
@@ -58,7 +63,7 @@ const Contact = () => {
 						<EmailIcon fontSize='inherit' />
 					</Typography>
 					<Typography variant="h4" color="primary">
-						Email: angaldrich31@gmail.com
+						<Typography className={classes.type} display='inline'>Email:</Typography> angaldrich31@gmail.com
 					</Typography>	
 					</Grid>
 					
@@ -67,7 +72,7 @@ const Contact = () => {
 						<PermPhoneMsgIcon fontSize='inherit' />
 					</Typography>
 					<Typography variant="h4" color="primary">
-						Call/Message: +61 432 738 176
+					<Typography className={classes.type} display='inline'>Call/Message:</Typography> +61 432 738 176
 					</Typography>
 					</Grid>
 
@@ -76,7 +81,7 @@ const Contact = () => {
 						<HomeIcon fontSize='inherit'/>
 					</Typography>
 					<Typography variant="h4" color="primary">
-						Address: Australian Capital Territory, Australia
+					<Typography className={classes.type} display='inline'>Address:</Typography> Australian Capital Territory, Australia
 					</Typography>
 					</Grid>
 

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 import InfoIcon from '@material-ui/icons/Info';
 const useStyles = makeStyles({
 	container: {
-		minHeight: '50vh',
+		minHeight: '45vh',
 		background: '#FFEC70',
 		color: '#FFFFFF'
 	},
@@ -16,7 +16,8 @@ const useStyles = makeStyles({
 		height: '0'
 	},
 	about: {
-		color: '#2F5075'
+		fontWeight: '600',
+		textTransform: 'uppercase'
 	},
 	icon: {
 		position: 'relative',
@@ -30,6 +31,9 @@ const useStyles = makeStyles({
 	au: {
 		fontWeight: '700',
 		fontSize: '1.5rem'
+	},
+	text: {
+		lineHeight: '2rem'
 	}
 });
 
@@ -41,7 +45,7 @@ const About = () => {
 				<Typography variant="h1">
 					<InfoIcon className={classes.icon} fontSize="inherit" color="primary" />
 				</Typography>
-				<Typography variant="h1" className={classes.about}>
+				<Typography color='primary' variant="h1" className={classes.about}>
 					About me
 				</Typography>
 				<Typography color="primary" variant="h5" className={classes.text}>

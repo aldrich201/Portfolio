@@ -10,6 +10,10 @@ const useStyles = makeStyles({
 	icon: {
 		position: 'relative',
 		top: '1rem'
+	},
+	title: {
+		fontWeight: '600',
+		textTransform: 'uppercase'
 	}
 });
 
@@ -20,7 +24,7 @@ const ProjectTitle = () => {
 			<Typography variant="h1">
 				<CodeIcon color="secondary" fontSize="inherit" className={classes.icon} />
 			</Typography>
-			<Typography variant="h1" color="primary">
+			<Typography className={classes.title} variant="h1" color="primary">
 				Projects
 			</Typography>
 		</Grid>
