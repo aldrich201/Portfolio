@@ -4,35 +4,69 @@ import { Grid, Typography } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/styles';
 import InfoIcon from '@material-ui/icons/Info';
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	container: {
-		minHeight: '72.5vh',
+		minHeight: '50rem',
 		background: '#FFEC70',
-		color: '#FFFFFF'
+		color: '#FFFFFF',
+		[theme.breakpoints.up('xl')]: {
+			minHeight: '47.5rem'
+		},
+		[theme.breakpoints.down('lg')]: {
+			minHeight: '50rem'
+		},
+		[theme.breakpoints.down('md')]: {
+			minHeight: '60rem'
+		},
+		[theme.breakpoints.down('sm')]: {
+			minHeight: '70rem'
+		}
 	},
 	aboutHeader: {
 		width: '110rem',
 		margin: '3rem auto',
-		height: '0'
+		height: '0',
+		[theme.breakpoints.up('xl')]: {
+			width: '75%'
+		},
+		[theme.breakpoints.down('lg')]: {
+			width: '90%'
+		}
 	},
 	about: {
 		fontWeight: '600',
-		textTransform: 'uppercase'
+		textTransform: 'uppercase',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '4rem'
+		}
 	},
 	icon: {
 		position: 'relative',
 		top: '5px',
-		color: '#FFFFFF'
+		color: '#FFFFFF',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '4rem',
+			top: '-11px'
+		}
 	},
 	au: {
 		fontWeight: '700',
-		fontSize: '2rem'
+		fontSize: '2rem',
+		[theme.breakpoints.down('xs')]: {
+			fontSize: '1.5rem'
+		}
 	},
 	text: {
 		marginTop: '2rem',
-		lineHeight: '3rem'
+		lineHeight: '3rem',
+		[theme.breakpoints.down('sm')]: {
+			marginTop: '0'
+		},
+		[theme.breakpoints.down('xs')]: {
+			fontSize: '1.5rem'
+		}
 	}
-});
+}));
 
 const About = () => {
 	const classes = useStyles();

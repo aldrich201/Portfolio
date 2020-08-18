@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Spring} from 'react-spring/renderprops'
-import VisibilitySensor from "../../Visibility";
+import { Spring } from 'react-spring/renderprops';
+import VisibilitySensor from '../../Visibility';
 
 import {
 	Grid,
@@ -14,8 +14,7 @@ import {
 	Button,
 	IconButton,
 	Chip,
-	Avatar,
-
+	Avatar
 } from '@material-ui/core';
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -31,10 +30,13 @@ const gitClicked = (link) => {
 	window.open(link, '_blank');
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
 	container: {
 		width: '110rem',
-		margin: '0 auto 5rem auto'
+		margin: '0 auto 5rem auto',
+		[theme.breakpoints.up('xl')]: {
+			width: '90%'
+		}
 	},
 	root: {
 		maxWidth: 360
@@ -70,36 +72,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Projects = () => {
-	// const [ shown, setShown ] = useState(false);
-
-	
-
 	const classes = useStyles();
-	// //changethis
-	// // if(shown) {
-	// // 	revealed();
-	// }
-
-	// useEffect(
-	// 	() => {
-	// 		let onScroll;
-	// 		window.addEventListener(
-	// 			'scroll',
-	// 			(onScroll = (e) => {
-	// 				setScrollTop(e.target.documentElement.scrollTop);
-
-	// 				if (e.target.documentElement.scrollTop >= 900) {
-	// 					setShown(true);
-	// 				}
-	// 				// setScrolling(e.target.documentElement.scrollTop > scrollTop);
-	// 			})
-	// 		);
-
-	// 		return () => window.removeEventListener('scroll', onScroll);
-	// 	},
-	// 	[ scrollTop ]
-	// );
-
 
 	const handleClick = () => {
 		console.log('I am just here for the hover effect and to not look boring');
@@ -107,75 +80,80 @@ const Projects = () => {
 
 	return (
 		<Grid container justify="center" spacing={2} className={classes.container}>
-			
 			{portfolio.map((port) => (
 				<VisibilitySensor key={port.id} once>
-					{({isVisible}) => (
-						<Spring to={{opacity: isVisible?1:0 }}>
-					{props => (
-						<Grid item xs={12} sm={4} style={props}>
-						<Card className={classes.root}>
-							<CardHeader
-								color="primary"
-								title={<Typography variant="h4" className={classes.subHeader}>{port.title}</Typography>}
-								subheader={port.skillSumamry.map((skill) => (
-									<Chip
-										onClick={handleClick}
-										label={skill.name}
-										key={skill.name}
-										avatar={<Avatar src={skill.logo} alt={skill.name} color="none" className={classes.avatar} />}
-										color="primary"
-										variant="outlined"
-										className={classes.chip}
-										size='small'
-									/>
-								))}
-								disableTypography
-
-							/>
-							<CardMedia className={classes.media} image={port.photo} title={port.title} />
-							<CardContent>
-								<Typography variant="h5" color="textSecondary" component="p">
-									{port.projectSummary}
-								</Typography>
-							</CardContent>
-							<CardActions disableSpacing={false}>
-								<Button
-									variant="outlined"
-									startIcon={<VisibilityOutlinedIcon />}
-									color="secondary"
-									onClick={() => buttonClicked(port.projectLink)}
-									size="large"
-									className={classes.button}
-								>
-									<Typography variant="h6" component="p">
-										View Project
-									</Typography>
-								</Button>
-								<IconButton
-									aria-label="add to favorites"
-									size="medium"
-									edge="end"
-									onClick={() => gitClicked(port.github)}
-									color="secondary"
-									className={classes.git}
-									disableRipple={true}
-									disableFocusRipple={true}
-								>
-									<GitHubIcon />
-								</IconButton>
-							</CardActions>
-						</Card>
-					</Grid>
-					)}
-					
-					</Spring>
+					{({ isVisible }) => (
+						<Spring to={{ opacity: isVisible ? 1 : 0 }}>
+							{(props) => (
+								<Grid container justify="center" item xs={12} sm={6} md={4} xl={3} style={props}>
+									<Card className={classes.root}>
+										<CardHeader
+											color="primary"
+											title={
+												<Typography variant="h4" className={classes.subHeader}>
+													{port.title}
+												</Typography>
+											}
+											subheader={port.skillSumamry.map((skill) => (
+												<Chip
+													onClick={handleClick}
+													label={skill.name}
+													key={skill.name}
+													avatar={
+														<Avatar
+															src={skill.logo}
+															alt={skill.name}
+															color="none"
+															className={classes.avatar}
+														/>
+													}
+													color="primary"
+													variant="outlined"
+													className={classes.chip}
+													size="small"
+												/>
+											))}
+											disableTypography
+										/>
+										<CardMedia className={classes.media} image={port.photo} title={port.title} />
+										<CardContent>
+											<Typography variant="h5" color="textSecondary" component="p">
+												{port.projectSummary}
+											</Typography>
+										</CardContent>
+										<CardActions disableSpacing={false}>
+											<Button
+												variant="outlined"
+												startIcon={<VisibilityOutlinedIcon />}
+												color="secondary"
+												onClick={() => buttonClicked(port.projectLink)}
+												size="large"
+												className={classes.button}
+											>
+												<Typography variant="h6" component="p">
+													View Project
+												</Typography>
+											</Button>
+											<IconButton
+												aria-label="add to favorites"
+												size="medium"
+												edge="end"
+												onClick={() => gitClicked(port.github)}
+												color="secondary"
+												className={classes.git}
+												disableRipple={true}
+												disableFocusRipple={true}
+											>
+												<GitHubIcon />
+											</IconButton>
+										</CardActions>
+									</Card>
+								</Grid>
+							)}
+						</Spring>
 					)}
 				</VisibilitySensor>
-				
 			))}
-			
-			
 		</Grid>
 	);
 };

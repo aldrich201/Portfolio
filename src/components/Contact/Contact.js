@@ -50,7 +50,15 @@ const useStyles = makeStyles((theme) => ({
 	},
 	type: {
 		fontWeight: '700',
-		fontSize: '2rem'
+		fontSize: '2rem',
+		[theme.breakpoints.down('xs')]: {
+			fontSize: '1.5rem'
+		}
+	},
+	contactMe: {
+		[theme.breakpoints.down('xs')]: {
+			fontSize: '1.5rem'
+		}
 	}
 }));
 
@@ -72,7 +80,7 @@ const Contact = () => {
 						<Typography variant="h4" className={classes.media}>
 							<EmailIcon fontSize="inherit" />
 						</Typography>
-						<Typography variant="h4" color="primary">
+						<Typography className={classes.contactMe} variant="h4" color="primary">
 							<Typography className={classes.type} display="inline">
 								Email:
 							</Typography>{' '}
@@ -84,7 +92,7 @@ const Contact = () => {
 						<Typography variant="h4" className={classes.media}>
 							<PermPhoneMsgIcon fontSize="inherit" />
 						</Typography>
-						<Typography variant="h4" color="primary">
+						<Typography className={classes.contactMe} variant="h4" color="primary">
 							<Typography className={classes.type} display="inline">
 								Call/Message:
 							</Typography>{' '}
@@ -96,7 +104,7 @@ const Contact = () => {
 						<Typography variant="h4" className={classes.media}>
 							<HomeIcon fontSize="inherit" />
 						</Typography>
-						<Typography variant="h4" color="primary">
+						<Typography className={classes.contactMe} variant="h4" color="primary">
 							<Typography className={classes.type} display="inline">
 								Location:
 							</Typography>{' '}

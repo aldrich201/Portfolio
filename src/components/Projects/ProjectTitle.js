@@ -3,19 +3,26 @@ import { Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import CodeIcon from '@material-ui/icons/Code';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	project: {
 		margin: '2rem auto'
 	},
 	icon: {
 		position: 'relative',
-		top: '1rem'
+		top: '1rem',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '4rem',
+			top: ''
+		}
 	},
 	title: {
 		fontWeight: '600',
-		textTransform: 'uppercase'
+		textTransform: 'uppercase',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '4rem'
+		}
 	}
-});
+}));
 
 const ProjectTitle = () => {
 	const classes = useStyles();

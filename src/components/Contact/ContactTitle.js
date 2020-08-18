@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
 	width: {
-		width: '110rem',
 		margin: '0 auto',
 		padding: '3rem 0',
 		height: '0'
@@ -13,11 +12,18 @@ const useStyles = makeStyles((theme) => ({
 	icon: {
 		position: 'relative',
 		top: '5px',
-		color: 'white'
+		color: 'white',
+		[theme.breakpoints.down('xs')]: {
+			fontSize: '4rem',
+			top: '-10px'
+		}
 	},
 	title: {
 		fontWeight: '600',
-		textTransform: 'uppercase'
+		textTransform: 'uppercase',
+		[theme.breakpoints.down('xs')]: {
+			fontSize: '4rem'
+		}
 	}
 }));
 

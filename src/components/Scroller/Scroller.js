@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 import { makeStyles } from '@material-ui/styles';
 import Timeline from '@material-ui/lab/Timeline';
@@ -17,11 +17,10 @@ const useStyles = makeStyles((theme) => ({
 		position: 'fixed',
 		top: '30%',
 		right: '2%',
-		opacity: 0.5,
-		transition: 'all 0.2s linear',
 
-		'&:hover': {
-			opacity: 1
+		transition: 'all 0.2s linear',
+		[theme.breakpoints.down('xs')]: {
+			display: 'none'
 		}
 	},
 
@@ -30,11 +29,71 @@ const useStyles = makeStyles((theme) => ({
 	},
 	button: {
 		color: '#FFFFFF'
+	},
+	button1: {
+		opacity: 0.5
+	},
+	button2: {
+		opacity: 0.5
+	},
+	button3: {
+		opacity: 0.5
+	},
+	button4: {
+		opacity: 0.5
 	}
 }));
 
 const Scroller = () => {
 	const classes = useStyles();
+	const [ scrollTop, setScrollTop ] = useState(0);
+	const ref1 = useRef();
+	const ref2 = useRef();
+	const ref3 = useRef();
+	const ref4 = useRef();
+
+	useEffect(
+		() => {
+			let onScroll;
+			window.addEventListener(
+				'scroll',
+				(onScroll = (e) => {
+					setScrollTop(e.target.documentElement.scrollTop);
+
+					if (scrollTop >= 0 && scrollTop <= 0.1 * window.document.body.scrollHeight) {
+						ref1.current.style.opacity = 1;
+						ref2.current.style.opacity = 0.5;
+						ref3.current.style.opacity = 0.5;
+						ref4.current.style.opacity = 0.5;
+					} else if (
+						scrollTop >= 0.1 * window.document.body.scrollHeight &&
+						scrollTop <= 0.3 * window.document.body.scrollHeight
+					) {
+						ref2.current.style.opacity = 1;
+						ref1.current.style.opacity = 0.5;
+						ref3.current.style.opacity = 0.5;
+						ref4.current.style.opacity = 0.5;
+					} else if (
+						scrollTop >=
+						0.98 * (parseInt(window.document.body.scrollHeight) - parseInt(window.innerHeight))
+					) {
+						ref4.current.style.opacity = 1;
+						ref1.current.style.opacity = 0.5;
+						ref3.current.style.opacity = 0.5;
+						ref2.current.style.opacity = 0.5;
+					} else {
+						ref3.current.style.opacity = 1;
+						ref1.current.style.opacity = 0.5;
+						ref4.current.style.opacity = 0.5;
+						ref2.current.style.opacity = 0.5;
+					}
+				})
+			);
+
+			return () => window.removeEventListener('scroll', onScroll);
+		},
+		[ scrollTop ]
+	);
 
 	//could prolly use map here or use a switch statement
 	const onClickHandler1 = () => {
@@ -69,7 +128,7 @@ const Scroller = () => {
 		<Timeline className={classes.timeline}>
 			<TimelineItem>
 				<TimelineSeparator>
-					<Fab color="secondary" className={classes.button} onClick={onClickHandler1}>
+					<Fab innerRef={ref1} color="secondary" className={classes.button1} onClick={onClickHandler1}>
 						<AccountCircleIcon fontSize="large" className={classes.button} />
 					</Fab>
 
@@ -79,7 +138,7 @@ const Scroller = () => {
 
 			<TimelineItem>
 				<TimelineSeparator>
-					<Fab color="secondary" className={classes.button} onClick={onClickHandler2}>
+					<Fab innerRef={ref2} color="secondary" className={classes.button2} onClick={onClickHandler2}>
 						<InfoIcon fontSize="large" className={classes.button} />
 					</Fab>
 
@@ -89,7 +148,7 @@ const Scroller = () => {
 
 			<TimelineItem>
 				<TimelineSeparator>
-					<Fab color="secondary" className={classes.button} onClick={onClickHandler3}>
+					<Fab innerRef={ref3} color="secondary" className={classes.button3} onClick={onClickHandler3}>
 						<CodeIcon fontSize="large" className={classes.button} />
 					</Fab>
 					<TimelineConnector className={classes.primaryTail} />
@@ -98,7 +157,7 @@ const Scroller = () => {
 
 			<TimelineItem>
 				<TimelineSeparator>
-					<Fab color="secondary" className={classes.button} onClick={onClickHandler4}>
+					<Fab innerRef={ref4} color="secondary" className={classes.button4} onClick={onClickHandler4}>
 						<SendIcon fontSize="large" className={classes.button} />
 					</Fab>
 				</TimelineSeparator>
