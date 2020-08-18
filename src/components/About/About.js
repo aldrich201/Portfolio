@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down('md')]: {
 			minHeight: '60rem'
 		},
-		[theme.breakpoints.down('sm')]: {
-			minHeight: '70rem'
+		[theme.breakpoints.down('xs')]: {
+			minHeight: '90rem'
 		}
 	},
 	aboutHeader: {
@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down('lg')]: {
 			width: '90%'
+		},
+		[theme.breakpoints.down('xs')]: {
+			width: '85%'
 		}
 	},
 	about: {

@@ -15,19 +15,25 @@ import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles((theme) => ({
 	container: {
 		height: '50vh',
-		background: '#FFEC70'
+		background: '#FFEC70',
+		[theme.breakpoints.down('xs')]: {
+			height: '35vh'
+		}
 	},
 	container2: {
-		marginTop: '2rem'
-	},
-	width: {
-		width: '110rem',
-		margin: '0 auto',
-		padding: '2rem 0',
-		height: '0'
+		marginTop: '2rem',
+		[theme.breakpoints.down('xs')]: {
+			margin: '0 auto',
+			width: '90%',
+			marginTop: '0'
+		}
 	},
 	social: {
-		alignSelf: 'center'
+		alignSelf: 'center',
+		[theme.breakpoints.down('xs')]: {
+			margin: '0 auto',
+			width: '90%'
+		}
 	},
 
 	media: {
@@ -35,7 +41,10 @@ const useStyles = makeStyles((theme) => ({
 		position: 'relative',
 		top: '5px',
 		marginRight: '1rem',
-		transform: 'scale(1.2)'
+		transform: 'scale(1.2)',
+		[theme.breakpoints.down('xs')]: {
+			top: '0'
+		}
 	},
 	media2: {
 		color: '#FFFFFF',
@@ -46,7 +55,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	details: {
 		width: '110rem',
-		margin: '0 auto'
+		margin: '0 auto',
+		[theme.breakpoints.down('md')]: {
+			width: '90%'
+		}
 	},
 	type: {
 		fontWeight: '700',

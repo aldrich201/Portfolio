@@ -7,7 +7,18 @@ const useStyles = makeStyles((theme) => ({
 	width: {
 		margin: '0 auto',
 		padding: '3rem 0',
-		height: '0'
+		height: '0',
+		[theme.breakpoints.down('md')]: {
+			marginBottom: '3rem'
+		},
+		[theme.breakpoints.down('sm')]: {
+			padding: '2rem',
+			marginBottom: '2rem'
+		},
+		[theme.breakpoints.down('xs')]: {
+			padding: '1rem',
+			marginBottom: '2rem'
+		}
 	},
 	icon: {
 		position: 'relative',
