@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 		height: '25rem',
 		width: '25rem',
 		boxShadow: '10px 5px 5px rgba(0,0,0,0.2)',
-		[`${theme.breakpoints.down('lg')} and (orientation: landscape)`]: {
+		[`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
 			marginTop: 'calc(100vh * 0.1)',
 			width: '15rem',
 			height: '15rem'

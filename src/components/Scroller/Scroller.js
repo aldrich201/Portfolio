@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
 		right: '2%',
 
 		transition: 'all 0.2s linear',
+		[`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+			top: '0'
+		},
 		[theme.breakpoints.down('xs')]: {
 			display: 'none'
 		}
