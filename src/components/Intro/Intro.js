@@ -31,9 +31,13 @@ const useStyles = makeStyles((theme) => ({
 		height: '25rem',
 		width: '25rem',
 		boxShadow: '10px 5px 5px rgba(0,0,0,0.2)',
-		transition: 'all 0.2s ease',
+		[`${theme.breakpoints.down('lg')} and (orientation: landscape)`]: {
+			marginTop: 'calc(100vh * 0.1)',
+			width: '15rem',
+			height: '15rem'
+		},
 
-		[theme.breakpoints.down('md')]: {
+		[`${theme.breakpoints.down('md')} and (orientation: portrait)`]: {
 			marginTop: 'calc(100vh * 0.15)'
 		}
 	},
@@ -45,7 +49,10 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down('md')]: {
 			fontSize: '5rem'
 		},
-		[theme.breakpoints.down('sm')]: {
+		[`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+			fontSize: '4rem'
+		},
+		[`${theme.breakpoints.down('sm')} and (orientation: portrait)`]: {
 			fontSize: '4rem'
 		}
 	},
@@ -63,7 +70,10 @@ const useStyles = makeStyles((theme) => ({
 		'&:visited': {
 			textDecoration: 'none'
 		},
-		marginTop: '2rem'
+		marginTop: '2rem',
+		[`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+			marginTop: '1rem'
+		}
 	}
 }));
 

@@ -20,7 +20,7 @@ import ProjectTitle from './components/Projects/ProjectTitle';
 //scroll up click
 
 function App() {
-	const [ loading, setLoading ] = useState(true);
+	const [ loading, setLoading ] = useState(false);
 	const classes = useStyles();
 
 	const sleep = (milliseconds) => {

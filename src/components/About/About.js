@@ -12,14 +12,23 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up('xl')]: {
 			minHeight: '47.5rem'
 		},
-		[theme.breakpoints.down('lg')]: {
+		[`${theme.breakpoints.down('lg')} and (orientation: portrait)`]: {
 			minHeight: '50rem'
 		},
-		[theme.breakpoints.down('md')]: {
+		[`${theme.breakpoints.down('lg')} and (orientation: landscape)`]: {
+			minHeight: '55rem'
+		},
+		[`${theme.breakpoints.down('md')} and (orientation: portrait)`]: {
 			minHeight: '60rem'
 		},
-		[theme.breakpoints.down('xs')]: {
-			minHeight: '90rem'
+		[`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+			minHeight: '60rem'
+		},
+		[`${theme.breakpoints.down('sm')} and (orientation: portrait)`]: {
+			minHeight: '80rem'
+		},
+		[`${theme.breakpoints.down('sm')} and (orientation: landscape)`]: {
+			minHeight: '70rem'
 		}
 	},
 	aboutHeader: {
@@ -39,6 +48,12 @@ const useStyles = makeStyles((theme) => ({
 	about: {
 		fontWeight: '600',
 		textTransform: 'uppercase',
+		[`${theme.breakpoints.down('md')} and (orientation: portrait)`]: {
+			fontSize: '4rem'
+		},
+		[`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+			fontSize: '4rem'
+		},
 		[theme.breakpoints.down('sm')]: {
 			fontSize: '4rem'
 		}
@@ -47,9 +62,17 @@ const useStyles = makeStyles((theme) => ({
 		position: 'relative',
 		top: '5px',
 		color: '#FFFFFF',
+		[`${theme.breakpoints.down('md')} and (orientation: portrait)`]: {
+			fontSize: '4rem',
+			top: '-12.5px'
+		},
+		[`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+			fontSize: '4rem',
+			top: '-12.5px'
+		},
 		[theme.breakpoints.down('sm')]: {
 			fontSize: '4rem',
-			top: '-11px'
+			top: '-12.5px'
 		}
 	},
 	au: {

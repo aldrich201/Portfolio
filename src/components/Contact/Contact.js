@@ -16,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
 	container: {
 		height: '50vh',
 		background: '#FFEC70',
-		[theme.breakpoints.down('xs')]: {
+		[`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+			height: '90vh'
+		},
+		[`${theme.breakpoints.down('xs')} and (orientation: portrait)`]: {
 			height: '35vh'
 		}
 	},
