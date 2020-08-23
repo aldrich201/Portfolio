@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import Typist from 'react-typist';
 
 import { Grid, Avatar, Typography } from '@material-ui/core';
-import Pdf from '../../_blank/resume.pdf';
+import Resume from '../../_blank/CV.docx';
 import DescriptionIcon from '@material-ui/icons/Description';
 import Button from '@material-ui/core/Button';
 
@@ -112,7 +112,7 @@ const Intro = () => {
 				{subContent}
 			</Typography>
 
-			<a className={classes.a} href={Pdf} rel="noopener noreferrer" target="_blank">
+			<a className={classes.a} href={Resume} rel="noopener noreferrer" target="_blank">
 				<Button
 					variant="contained"
 					color="secondary"
